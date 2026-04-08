@@ -1,9 +1,8 @@
 const form = document.getElementById('task-form');
 const tasksList = document.getElementById('tasks-list');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
+// Функция добавления задачи
+function addTask() {
   const title = form.title.value.trim();
   const stack = form.stack.value;
   const description = form.description.value.trim();
@@ -18,6 +17,7 @@ form.addEventListener('submit', function(e) {
     <button class="delete-btn">Удалить</button>
   `;
 
+  // Удаление задачи
   taskCard.querySelector('.delete-btn').addEventListener('click', () => {
     taskCard.remove();
   });
@@ -25,4 +25,18 @@ form.addEventListener('submit', function(e) {
   tasksList.appendChild(taskCard);
 
   form.reset();
+}
+
+// Создание задачи при клике на кнопку
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  addTask();
+});
+
+// Создание задачи при нажатии Enter (только для input, не textarea)
+form.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    addTask();
+  }
 });
