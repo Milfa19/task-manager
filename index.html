@@ -4,32 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Manager SPA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="form-column">
-      <h2>Создать задачу</h2>
-      <form id="task-form">
-        <input type="text" id="task-title" placeholder="Название" required>
-        <input type="text" id="task-stack" placeholder="Стек (Python, Web, Дизайн)" required>
-        <textarea id="task-desc" placeholder="Описание" required></textarea>
-        <button type="submit">Создать задачу</button>
-      </form>
-    </div>
-    
-    <div class="tasks-column">
-      <h2>Задачи</h2>
-      <div class="filter-buttons">
-        <button data-filter="All">Все</button>
-        <button data-filter="Python">Python</button>
-        <button data-filter="Web">Web</button>
-        <button data-filter="Дизайн">Дизайн</button>
-      </div>
-      <div id="tasks-list"></div>
-    </div>
+
+<div class="container">
+
+  <div class="form-column">
+    <h2>Добавить задачу</h2>
+    <form id="task-form">
+      <input type="text" name="title" placeholder="Название" required>
+      <select name="stack" required>
+        <option value="">Выберите стек</option>
+        <option value="Web">Web</option>
+        <option value="Python">Python</option>
+        <option value="Дизайн">Дизайн</option>
+      </select>
+      <textarea name="description" placeholder="Описание"></textarea>
+      <button type="submit">Создать задачу</button>
+    </form>
   </div>
 
-  <script src="script.js"></script>
+  <div class="tasks-column">
+    <h2>Список задач</h2>
+    <div id="tasks-list" class="tasks"></div>
+  </div>
+
+</div>
+
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
