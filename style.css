@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.form-column, .tasks-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#tasks-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+.task-card h3 {
+  margin: 0 0 5px;
+}
+
+.task-card p {
+  margin: 5px 0;
+}
+
+.task-card .delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  .task-card {
+    width: 100%;
+  }
+}
